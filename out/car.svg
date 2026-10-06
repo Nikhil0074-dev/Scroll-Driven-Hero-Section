@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 460" width="200" height="460">
+  <defs>
+    <linearGradient id="body" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#E85A00"/>
+      <stop offset="0.5" stop-color="#FF7A1A"/>
+      <stop offset="1" stop-color="#E85A00"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#3A4653"/>
+      <stop offset="1" stop-color="#151A20"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-10%" width="160%" height="120%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <!-- right half of the car; mirrored for the left half -->
+    <g id="half">
+      <path d="M100 14 C126 14 146 40 152 92 C156 140 160 170 156 215 C154 260 162 300 160 350 C158 400 140 436 100 442 Z" fill="url(#body)"/>
+      <!-- cockpit glass -->
+      <path d="M100 148 C120 150 132 170 134 200 C136 236 132 262 126 284 C118 292 108 294 100 294 Z" fill="url(#glass)"/>
+      <!-- headlight -->
+      <path d="M116 44 L140 64 L136 71 L112 55 Z" fill="#F4F7FA"/>
+      <!-- hood vent -->
+      <path d="M116 100 L138 116 L136 124 L114 110 Z" fill="#B84600"/>
+      <!-- side intake -->
+      <path d="M148 226 C154 246 154 268 150 288 L142 284 C144 266 144 246 140 230 Z" fill="#15181C"/>
+      <!-- engine deck lines -->
+      <path d="M112 322 L138 322 M112 342 L142 342 M112 362 L142 362" stroke="#B84600" stroke-width="4" stroke-linecap="round"/>
+      <!-- tail light -->
+      <path d="M112 430 L144 414 L146 420 L116 438 Z" fill="#D6202B"/>
+      <!-- mirror -->
+      <rect x="150" y="172" width="16" height="9" rx="4" fill="#E85A00"/>
+    </g>
+  </defs>
+
+  <!-- ground shadow -->
+  <ellipse cx="104" cy="240" rx="72" ry="214" fill="#000" opacity="0.35" filter="url(#soft)"/>
+
+  <!-- wheels -->
+  <g fill="#0E1114">
+    <rect x="146" y="76" width="26" height="76" rx="9"/>
+    <rect x="28" y="76" width="26" height="76" rx="9"/>
+    <rect x="146" y="298" width="28" height="88" rx="10"/>
+    <rect x="26" y="298" width="28" height="88" rx="10"/>
+  </g>
+
+  <!-- body -->
+  <use href="#half"/>
+  <use href="#half" transform="translate(200,0) scale(-1,1)"/>
+
+  <!-- center stripes -->
+  <path d="M96 20 V148 M104 20 V148 M96 294 V436 M104 294 V436" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="2.5"/>
+
+  <!-- roof line -->
+  <rect x="78" y="196" width="44" height="60" rx="18" fill="#0F1318" opacity="0.65"/>
+
+  <!-- rear wing -->
+  <rect x="44" y="404" width="112" height="14" rx="6" fill="#1A1F25"/>
+</svg>
